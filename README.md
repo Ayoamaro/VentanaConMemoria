@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ventana con memoria
 
 Implementar una aplicación en Java con el framework JavaFX que disponga de una ventana principal con el siguiente aspecto:
@@ -41,3 +42,7 @@ String rutaPerfil = System.getProperty("user.home");
 ```
 
 **NOTA3: Para cargar el fichero de propiedades sobreescribe el método "[init](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html#init--)" de Application, y para escribirlo hazlo en su método "[stop](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html#stop--)".**
+=======
+# VentanaConMemoria
+Aplicación en JavaFX que disponga de una ventana principal con 3 sliders que cambiarán dinámicamente el color de fondo de la ventana. Actividad desarrollada para DAD
+>>>>>>> 81b527ddf06bbee17723917f4b8ba16f6272aaac
