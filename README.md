@@ -1,17 +1,16 @@
-<<<<<<< HEAD
 # Ventana con memoria
 
-Implementar una aplicación en Java con el framework JavaFX que disponga de una ventana principal con el siguiente aspecto:
+Implementar una aplicación en JavaFX que disponga de una ventana principal con el siguiente aspecto:
 
-(IMAGEN)
+![](https://github.com/Ayoamaro/VentanaConMemoria/blob/main/docs/images/ventana-principal.png?raw=true)
 
 Al desplazar los sliders ([Slider](https://docs.oracle.com/javafx/2/ui_controls/slider.htm)) correspondientes a cada componente del Color (RGB) se cambiará dinámicamente el color de fondo de la ventana.
 
-(IMAGEN)
+![](https://github.com/Ayoamaro/VentanaConMemoria/blob/main/docs/images/ventana-verde.png?raw=true)
 
 Asimismo, la ventana deberá contar con "memoria", de forma que cuando se cierre y se vuelva abrir se deberá encontrar tal y como la dejamos.
 
-(IMAGEN)
+![](https://github.com/Ayoamaro/VentanaConMemoria/blob/main/docs/images/ventana-roja.png?raw=true)
 
 Para implementar la memoria se deberá **leer un fichero de propiedades al iniciar la ventana**.
 
@@ -42,7 +41,3 @@ String rutaPerfil = System.getProperty("user.home");
 ```
 
 **NOTA3: Para cargar el fichero de propiedades sobreescribe el método "[init](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html#init--)" de Application, y para escribirlo hazlo en su método "[stop](https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html#stop--)".**
-=======
-# VentanaConMemoria
-Aplicación en JavaFX que disponga de una ventana principal con 3 sliders que cambiarán dinámicamente el color de fondo de la ventana. Actividad desarrollada para DAD
->>>>>>> 81b527ddf06bbee17723917f4b8ba16f6272aaac
