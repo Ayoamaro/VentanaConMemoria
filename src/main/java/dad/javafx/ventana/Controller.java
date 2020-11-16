@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.GridPane;
 
 /**
@@ -17,6 +18,9 @@ public class Controller implements Initializable {
 
 	@FXML
 	private GridPane view;
+	
+	@FXML
+	private Slider redSlider, greenSlider, blueSlider;
 	
 	public Controller() throws IOException{
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/View.fxml"));
