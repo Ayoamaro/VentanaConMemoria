@@ -1,7 +1,10 @@
 package dad.javafx.ventana;
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.scene.paint.Color;
 
 /**
  * @author Ayoze Amaro
@@ -12,7 +15,18 @@ public class Model {
 	private DoubleProperty red = new SimpleDoubleProperty();
 	private DoubleProperty green = new SimpleDoubleProperty();
 	private DoubleProperty blue = new SimpleDoubleProperty();
+	private ReadOnlyObjectWrapper<Color> color;
 
+	public Model() {
+		red = new SimpleDoubleProperty();
+		green = new SimpleDoubleProperty();
+		blue = new SimpleDoubleProperty();
+		color = new ReadOnlyObjectWrapper<Color>();
+		color.bind(Bindings.createObjectBinding(() -> {
+			return new Color(getRed() / 256.0, getGreen() / 256.0, getBlue() / 256.0, 1f);
+		}, red, green, blue));
+	}
+	
 	public final DoubleProperty redProperty() {
 		return this.red;
 	}
@@ -47,5 +61,13 @@ public class Model {
 
 	public final void setBlue(final double blue) {
 		this.blueProperty().set(blue);
+	}
+	
+	public final javafx.beans.property.ReadOnlyObjectProperty<javafx.scene.paint.Color> colorProperty() {
+		return this.color.getReadOnlyProperty();
+	}
+
+	public final Color getColor() {
+		return this.colorProperty().get();
 	}
 }

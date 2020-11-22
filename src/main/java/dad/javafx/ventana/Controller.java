@@ -4,15 +4,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.beans.Observable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.control.Slider;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
@@ -38,31 +33,22 @@ public class Controller implements Initializable {
 	}
 	
 	public void initialize(URL location, ResourceBundle resources) {
-		colores.redProperty().bindBidirectional(redSlider.valueProperty());
-		colores.greenProperty().bindBidirectional(greenSlider.valueProperty());
-		colores.blueProperty().bindBidirectional(blueSlider.valueProperty());
 		
-		colores.redProperty().addListener(e -> onRedPropertyChange(e));
-		colores.greenProperty().addListener(e -> onGreenPropertyChange(e));
-		colores.blueProperty().addListener(e -> onBluePropertyChange(e));
-	}
-	
-	private void onRedPropertyChange(Observable e) {
-		background = Color.rgb(colores.redProperty().intValue(), colores.greenProperty().intValue(), colores.blueProperty().intValue());
-		view.setBackground(new Background(new BackgroundFill(background, CornerRadii.EMPTY, Insets.EMPTY)));
-	}
-	
-	private void onGreenPropertyChange(Observable e) {
-		background = Color.rgb(colores.redProperty().intValue(), colores.greenProperty().intValue(), colores.blueProperty().intValue());
-		view.setBackground(new Background(new BackgroundFill(background, CornerRadii.EMPTY, Insets.EMPTY)));
-	}
-	
-	private void onBluePropertyChange(Observable e) {
-		background = Color.rgb(colores.redProperty().intValue(), colores.greenProperty().intValue(), colores.blueProperty().intValue());
-		view.setBackground(new Background(new BackgroundFill(background, CornerRadii.EMPTY, Insets.EMPTY)));
+		redSlider.valueProperty().bindBidirectional(colores.redProperty());
+		blueSlider.valueProperty().bindBidirectional(colores.blueProperty());
+		greenSlider.valueProperty().bindBidirectional(colores.greenProperty());
+
+		colores.colorProperty().addListener((o, ov, nv) -> {
+			view.setStyle("-fx-background-color: rgb(" + nv.getRed() * 256 + "," + nv.getGreen() * 256 + ", "
+					+ nv.getBlue() * 256 + ");");
+		});
 	}
 	
 	public GridPane getView() {
 		return this.view;
+	}
+	
+	public Model getModel() {
+		return colores;
 	}
 }
