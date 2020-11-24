@@ -4,7 +4,7 @@ Implementar una aplicación en JavaFX que disponga de una ventana principal con 
 
 ![](https://github.com/Ayoamaro/VentanaConMemoria/blob/main/docs/images/ventana-principal.png?raw=true)
 
-Al desplazar los sliders ([Slider](https://docs.oracle.com/javafx/2/ui_controls/slider.htm)) correspondientes a cada componente del Color (RGB) se cambiará dinámicamente el color de fondo de la ventana.
+Al desplazar los sliders ([Slider](https://docs.oracle.com/javafx/2/ui_controls/slider.htm)) correspondientes a cada componente del **Color (RGB)** se cambiará dinámicamente el color de fondo de la ventana.
 
 ![](https://github.com/Ayoamaro/VentanaConMemoria/blob/main/docs/images/ventana-verde.png?raw=true)
 
